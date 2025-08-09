@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Store Billing Software</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Store Billing Software</h1>
+
+        <!-- Inventory Section -->
+        <section>
+            <h2>Add Inventory</h2>
+            <form id="inventory-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <input type="number" id="purchase-price" placeholder="Purchase Price" required>
+                <input type="number" id="sell-price" placeholder="Sell Price" required>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <input type="date" id="purchase-date" required>
+                <button type="submit">Add to Inventory</button>
+            </form>
+        </section>
+
+        <!-- Display Inventory Section -->
+        <section>
+            <h2>Display Inventory</h2>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Purchase Price</th>
+                        <th>Sell Price</th>
+                        <th>Quantity</th>
+                        <th>Purchase Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Add to Cart Section -->
+        <section>
+            <h2>Add to Cart</h2>
+            <form id="cart-form">
+                <select id="product-select" required></select>
+                <input type="number" id="buy-quantity" placeholder="Quantity to Buy" required>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </section>
+
+        <!-- Billing Section -->
+        <section>
+            <h2>Billing</h2>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Profit</th>
+                        <th>Subtotal</th>
+                        <th>Sale Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="bill-summary">
+                <p><strong>Total Revenue:</strong> $<span id="total-revenue">0</span></p>
+                <p><strong>Total Profit:</strong> $<span id="total-profit">0</span></p>
+                <button onclick="printBill()">Print Bill</button>
+            </div>
+        </section>
+
+        <!-- Monthly Report Section -->
+        <section>
+            <h2>Monthly Report</h2>
+            <table id="monthly-report-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Sold Quantity</th>
+                        <th>Total Revenue</th>
+                        <th>Total Profit</th>
+                        <th>Last Sale Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

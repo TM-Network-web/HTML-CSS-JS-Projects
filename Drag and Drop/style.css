@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #F7F9FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: green;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container .board {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.container .board .list {
+    background-color: #E3E4E8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    min-height: 400px;
+}
+
+.container .board .list h2 {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.container .board .list .card {
+    background-color: white;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: .5rem;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container .board .list .card:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.container .board .list.over {
+    background-color: #D1D3D8;
+}
+
+
+@media (max-width:750px) {
+
+    .container .board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .board .list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

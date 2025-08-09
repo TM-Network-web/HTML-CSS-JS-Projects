@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+
+:root{
+    --first-color: #2B5876;
+    --Second-color:#4E4376;
+    --weak-color:#FC8181;
+    --medium-color: #FBD38D;
+    --strong-color:#68D391;
+}
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(45deg,var(--first-color),var(--Second-color) );
+    width: 100%;
+}
+
+
+.container {
+    background-color: #F6F7F9;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.23);
+    padding: 1rem;
+    
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: #2B5876;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.7rem;
+}
+.container h1::after{
+    content:"";
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 4px;
+    border-radius: 4px;
+    background:linear-gradient(90deg,var(--first-color),var(--Second-color));
+
+}
+
+.container .password-container{
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 1.8rem;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.container .password-container input{
+    height: 100%;
+    width: 70%;
+    padding-right: .5rem;
+    border: none;
+    background: none;
+}
+
+.container .password-container #copy-btn{
+    background-color: #e5e7ed;
+   
+    padding: 7px 0;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+    transition: all linear 0.3s;
+
+}
+
+
+.container .password-container #copy-btn:active{
+    scale: 0.9;
+}
+
+
+.container .options{
+    padding: .8rem 1.4rem;
+    box-shadow:  0 4px 6px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.container .options .option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+
+.container .options .option label{
+    font-weight: 600;
+    color: #524f4f;
+    font-size: .9rem;
+}
+
+.container .options .option .range-container{
+    display: flex;
+    gap: 1rem;
+    padding: 0 .4rem;
+}
+
+.container .options .option .range-container #length-value{
+    background-color: #e5e7ed;
+    color: var(--first-color);
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+input[type="range"]{
+    accent-color: var(--first-color);
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--first-color);
+    appearance: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--first-color);
+
+}
+
+input[type="checkbox"]:checked::after{
+    content: "\2714";
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+#generate-btn{
+    background:linear-gradient(135deg, var(--first-color),var(--Second-color));
+    color: white;
+    width: 100%;
+    padding: .7rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all linear 0.3s;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    margin-bottom: 1.5rem;
+}
+
+#generate-btn:active{
+    scale: 0.9;
+}
+
+.strength-container{
+    padding: .5rem;
+}
+
+.strength-container p{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #524f4f;
+    font-size: .9rem;
+    padding: 0 .7rem;
+}
+
+.strength-meter{
+    height: 10px;
+    background-color: #EDF2F7;
+    border-radius: 5px;
+    margin: 1rem;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.strength-bar{
+    height: 100%;
+    width: 0;
+    min-width: 5%;
+    background-color:var(--weak-color) ;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}

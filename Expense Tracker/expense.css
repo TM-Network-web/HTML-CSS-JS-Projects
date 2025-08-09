@@ -1,0 +1,261 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: linear-gradient(135deg, #419567, #6AAF88);
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.container h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+/* Now we apply styling on Balance Container  */
+
+.container .balance-container {
+    background: linear-gradient(135deg, #9DC9A2, #82AA63);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+}
+
+.container .balance-container p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #323030;
+}
+
+.container .balance-container .summary {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.container .balance-container .summary .ie-con {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container .balance-container .summary .income p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #207E46;
+
+}
+
+.container .balance-container .summary .expense p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #AD1F1F;
+}
+
+.container .balance-container .summary .ie-con:hover {
+    transform: translateY(-3px);
+}
+
+.container .balance-container .summary .income {
+    color: #207E46;
+}
+
+.container .balance-container .summary .expense {
+    color: #AD1F1F;
+}
+
+/* Now we apply styling on Transactions details Container  */
+.container .main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+.container .main-content .transaction-container {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+.container .main-content .transaction-container #transaction-lists {
+    overflow-y: auto;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container .main-content .transaction-container #transaction-lists::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #F1F1F1;
+}
+
+.container .main-content .transaction-container #transaction-lists::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #CBD5E0;
+}
+
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar-thumb:hover {
+    background-color: #A0AEC0;
+
+}
+
+.container .main-content .transaction-container #transaction-lists .transaction {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.container .main-content .transaction-container #transaction-lists .transaction.income {
+    border-right: 2px solid #207E46;
+    color: #207E46;
+}
+
+.container .main-content .transaction-container #transaction-lists .transaction.expense {
+    border-right: 2px solid #AD1F1F;
+    color: #AD1F1F;
+}
+
+.container .main-content .transaction-container #transaction-lists .transaction .delete-btn {
+    background: none;
+    border: none;
+    color: #DC2626;
+    cursor: pointer;
+    opacity: 0;
+    padding: 4px 8px;
+    margin-left: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.container .main-content .transaction-container #transaction-lists .transaction:hover .delete-btn {
+
+    opacity: 1;
+    background-color: rgb(206, 201, 201);
+
+}
+
+
+/* Now We apply styling on Add Container */
+
+.container .main-content .add-transaction {
+    padding: 1rem;
+    width: 100%;
+    
+    background-color: #F5F7FB;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.32);
+
+
+}
+.container .main-content .add-transaction  h2{
+    color: #333;
+    text-align: center;
+}
+.container .main-content .add-transaction #transaction-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.container .main-content .add-transaction #transaction-form .form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .main-content .add-transaction #transaction-form .form-group label{
+    font-weight: 600;
+    margin-bottom: .5rem;
+    color: #666;
+}
+
+.container .main-content .add-transaction #transaction-form .form-group input{
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.32); */
+    padding: .5rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+.container .main-content .add-transaction #transaction-form .form-group input:focus{
+    outline: none;
+    border-color: #667EEA;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);   
+}
+
+
+.container .main-content .add-transaction #transaction-form .form-group small{
+    display: block;
+    margin: 4px 0;
+    color: #718096;
+    font-size: 0.899rem;
+}
+
+ 
+ .container .main-content .add-transaction #transaction-form  button[type="submit"]{
+       width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg,#2E8B57 0%,#3CB371 100%);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: all linear 0.2s;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+    margin-top: auto;
+    font-size: 1rem;
+    font-weight: 600;
+ }
+
+ button[type="submit"]:active{
+scale: 0.9;
+}
+
+@media (max-width:730px) {
+    .container .main-content {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: linear-gradient(135deg, #3B9162, #7AB995);
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: #2D3436;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 24px;
+    padding: 1rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+    text-align: center;
+    color: #1A202C;
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.container h2 {
+    color: #2D3748;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.container .balance-container {
+
+    background: linear-gradient(135deg, #A1CDAA, #7AA151);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.3rem;
+
+}
+
+.container .balance-container .summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.container .balance-container .summary .ie-con {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: .7rem;
+
+}
+
+.container .balance-container .summary .income {
+    color: #207e46;
+}
+
+.container .balance-container .summary .income #income-amount {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.container .balance-container .summary .income:hover {
+    transform: translateY(-2px);
+}
+
+.container .balance-container .summary .expenses {
+    color: rgb(173, 31, 31);
+
+}
+
+.container .balance-container .summary .expenses:hover {
+    transform: translateY(-2px);
+}
+
+.container .balance-container .summary .expenses #expense-amount {
+    color: rgb(173, 31, 31);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.container .main-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    width: 100%;
+}
+
+.container .main-content .transaction-container {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.container .main-content .transaction-container h2 {
+    text-align: left;
+}
+
+.container .main-content .transaction-container #transaction-list {
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+    flex-grow: 1;
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar-track {
+    background-color: #F1F1F1;
+    border-radius: 4px;
+}
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar-thumb {
+background-color: #CBD5E0;
+border-radius: 4px;
+
+}
+
+.container .main-content .transaction-container #transaction-list::-webkit-scrollbar-thumb:hover {
+ background-color: #A0AEC0;
+
+}
+
+.container .main-content .transaction-container #transaction-list .transaction{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    background-color: white;
+    border-right: 2px solid;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+    border-radius: 6px;
+    
+}
+@keyframes slideIn {
+    from{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
+
+.container .main-content .transaction-container #transaction-list .income{
+    color: #207e46;
+}
+.container .main-content .transaction-container #transaction-list .expenses{
+color: rgb(173, 31, 31);
+}
+
+.container .main-content .transaction-container #transaction-list .transaction .deletebtn{
+    background: none;
+    border: none;
+    color: #DC2626;
+    cursor: pointer;
+    opacity: 0;
+    padding: 4px 8px;
+    margin-left: 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+.container .main-content .transaction-container #transaction-list .transaction:hover .deletebtn{
+ opacity: 1;
+}
+
+.container .main-content .form-container{
+    background: linear-gradient(135deg,#F6F8FB,#F1F4F8);
+    padding: 1.3rem;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .main-content .form-container form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container .main-content .form-container form .form-group {
+ 
+    margin-bottom: 20px;
+}
+
+.container .main-content .form-container form .form-group label{
+
+    display: block;
+    margin-bottom: 8px;
+    color: #4A5568;
+    font-weight: 600;
+}  
+
+.container .main-content .form-container form .form-group input{
+
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E2E8F0;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.container .main-content .form-container form .form-group input:focus{
+    outline: none;
+    border-color: #667EEA;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.container .main-content .form-container form .form-group small{
+    display: block;
+    margin-top: 4px;
+    color: #718096;
+    font-size: 0.87rem;
+}
+
+button[type="submit"]{
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg,#2E8B57 0%,#3CB371 100%);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+    margin-top: auto;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button[type="submit"]:active{
+scale: 0.9;}
+
+
+@media (max-width:750px) {
+
+    .container .main-content{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

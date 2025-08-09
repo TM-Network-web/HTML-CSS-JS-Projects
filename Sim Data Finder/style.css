@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategray;
+    padding: 1rem;
+}
+
+
+.container{
+    max-width: 400px;
+    width: 100%;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.23);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.container .searchbox-container{
+    display: flex;
+    gap: .5rem;
+}
+
+.container .searchbox-container #phone-number{
+    width: 100%;
+    padding: 8px 15px;
+    font-size: 15px;
+    border: 2px solid rgb(232, 226, 226);
+    border-radius: 5px;
+
+}
+.container .searchbox-container #phone-number:focus{
+    outline: none;
+    border-color: rgb(68, 149, 199);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.12);
+}
+
+.container .searchbox-container .search-btn{
+    padding: 3px 5px;
+    cursor: pointer;
+    transition: all linear 0.3s;
+    background-color: chocolate;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.container .searchbox-container .search-btn:hover{
+    scale: 1.1;
+}
+
+.container .searchbox-container .search-btn:active{
+    scale: 0.9;
+}
+
+
+.container .result-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
