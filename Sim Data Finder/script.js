@@ -1,29 +1,40 @@
-function getSimDetails() {
-  const phoneNumber = document.getElementById('phoneNumber').value.trim();
-  const resultBox = document.getElementById('resultBox');
-  resultBox.innerHTML = "Loading...";
+const phoneNumber = document.getElementById('phone-number');
+const resultBox = document.querySelector('.result-box');
+const searchBtn = document.querySelector('.search-btn');
 
-  if (!phoneNumber) {
-    resultBox.innerHTML = "<p class='error'>Please enter a phone number.</p>";
-    return;
+searchBtn.addEventListener("click", getSimDetail);
+
+
+async function getSimDetail() {
+  let number = phoneNumber.value;
+resultBox.innerHTML = "";
+resultBox.innerHTML = "<p>Please wait for some Moments</p>";
+  if(number.trim()==="" && number.trim < 12){return};
+  let Api = `https://anoncyberwarrior.com/acwtools.php?num=${number}`;
+
+
+  let res = await fetch(Api);
+  let data = await res.json();
+
+
+  resultBox.innerHTML = "<p>Please wait for some Moments</p>";
+  if (data.Name || data.CNIC || data.Address || data.Numbers) {
+
+    resultBox.innerHTML = "";
+
+    resultBox.innerHTML = `
+<p><span>Name:</span> ${data.Name}</p>
+<p><span>CNIC:</span> ${data.CNIC}</p>
+<p><span>Address:</span> ${data.Address}</p>
+<p><span>Phone Number:</span> 0${data.Numbers}</p>
+    `;
   }
+  else if (data.message) {
+     resultBox.innerHTML = "";
+    resultBox.innerHTML = `<p>${data.message}</p>`
+  }
+  else (!data)
+  console.log("Something went wrong");
 
-  fetch(`https://anoncyberwarrior.com/acwtools.php?num=${phoneNumber}`)
-    .then(response => response.json())
-    .then(data => {
-      if (!data || data.error) {
-        resultBox.innerHTML = "<p class='error'>No record found for this number.</p>";
-      } else {
-        let resultHtml = `<div class="success">`;
-        for (let key in data) {
-          resultHtml += `<strong>${key}:</strong> ${data[key]}<br>`;
-        }
-        resultHtml += `</div>`;
-        resultBox.innerHTML = resultHtml;
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      resultBox.innerHTML = "<p class='error'>Something went wrong. Try again later.</p>";
-    });
 }
+
