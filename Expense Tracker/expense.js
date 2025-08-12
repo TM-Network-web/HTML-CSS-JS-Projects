@@ -77,9 +77,9 @@ function updateSummary(){
 }
 
 function  currencyformat(number){
-    return new Intl.NumberFormat("en-US",{
+    return new Intl.NumberFormat("en-PK",{
         style:"currency",
-        currency:"USD",
+        currency:"PKR",
     }).format(number);
 }
 

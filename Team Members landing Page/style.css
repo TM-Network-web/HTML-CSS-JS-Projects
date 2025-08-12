@@ -1,17 +1,17 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-html, body{
 
+html,body{
     background-color: #1A1A1A;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #DADFE4;
-    padding: 4rem 15px;
+    padding: 50px 1rem;
+    color: white;
 }
 
 .container{
@@ -19,60 +19,67 @@ html, body{
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items:center;
     gap: 1rem;
+    padding: 1rem;
 }
 
-.top-header{
-    margin-bottom: 30px;
+
+/* Styling for header of the container  */
+
+.container .header{
     text-align: center;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 3rem;
 }
 
-.top-header h1{
-    color: transparent;
-    background: linear-gradient(to right, #a78bfa,#c4b5fd);
+.header h1{
+    background:linear-gradient(to right, #AB90FB,#C3B4FD );
     background-clip: text;
-    -webkit-background-clip:text;
-    font-size: 2.3rem;
-    margin-bottom: 20px;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
     position: relative;
-    display: inline-block;
 }
 
-.top-header h1::after{
+.header h1::after{
     content: "";
     position: absolute;
-    width: 60px;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
     height: 4px;
+    width: 60px;
+    left: 45%;
+    bottom: -10px;
     background: linear-gradient(135deg,#a78bfa,#c4b5fd);
-    border-radius: 4px;
+    border-radius: 6px;
 }
-
-.top-header p{
+.header p{
+    color: #DADFE4;
     max-width: 500px;
-    margin: 0 auto;
-    margin-top: 20px
+    margin: 0 auto;   
 }
 
-.team-grid{
+/* Styling for team member profiles container  */
+
+.team-container{
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
-    margin-bottom: 4rem;
 }
 
 .profile-card{
     background-color: #252525;
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 6px;
     position: relative;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: all 0.3s ease;
-    height: 100%;
+    overflow: hidden;
+    
 }
 
 .profile-card:hover{
@@ -80,40 +87,39 @@ html, body{
 }
 
 .profile-card .card-top{
-
-    position: relative;
-    padding-top: 85px;
+    padding: 80px 0 30px 0;
     text-align: center;
     z-index: 1;
 }
 
-.profile-card .header{
-    height: 120px;
-    background-color: #a78bfa;
+.card-top .head{
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
+    background-color: #AB90FB;
     width: 100%;
+    height:120px ;
     z-index: -1;
 }
 
-.content{
+.card-top .content{
     display: flex;
     flex-direction: column;
-    gap: .6rem;
+    gap: 1rem;
     align-items: center;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #434141;
-    border-radius: 5px;
-    
+    border-bottom:2px solid #504e4e;
+    padding-bottom: 1.5rem;
 }
 
 .content img{
-    cursor: pointer;
-    border-radius: 50%;
-    border: 2px solid #252525;
-    transition: all 0.3s ease;
+    border-radius: 3rem;
     object-fit: cover;
+    border: 2px solid #7b7979;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
 .content img:hover{
     scale: 1.1;
 }
@@ -124,94 +130,79 @@ html, body{
 
 
 .card-bottom{
-    padding-bottom:1rem;
-    padding:1rem 0 ;
     text-align: center;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
 .card-bottom p{
-    margin-bottom: 20px;
+    color: #e4e1e1;
     line-height: 28px;
-    color: #b0aeae;
 }
 
 .card-bottom .social-profile{
-
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-.card-bottom .social-profile .icon{
-
-    text-decoration: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 2rem;
-    background-color: #434141;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.card-bottom .social-profile .icon:hover{
-    transform: translateY(-4px);
-}
-.card-bottom .social-profile .icon:active{
-    scale: 0.9;
-}
-.icon i{
-    position: absolute;
-    top: 30%;
-    right:25%;
+.social-profile .icon{
     color: white;
-}
-
-.open-position{
-    max-width: 80rem;
-    width: 100%;
-    margin: 0 auto;
-    background-color: #252525;
-    padding: 2rem;
-    border-radius: 6px;
-    border-top: 5px solid #a78bfa;
-    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
     transition: all 0.4s ease;
 }
 
-.open-position:hover{
+.icon:hover{
+
+    transform: translateY(-5px);
+}
+
+
+/* Styling on Join team Container  */
+
+.join-team{
+    margin-top: 40px;
+   max-width: 80rem;
+   width: 100%;
+   padding: 2rem;
+   border-radius: 6px;
+   background-color: #252525;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+    transition:all 0.4s ease ;
+}
+
+.join-team::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    height: 4px;
+    background-color: #a78bfa;
+   
+}
+.join-team:hover{
     transform: translateY(-6px);
 }
 
-.open-position h1{
-    color:#b19bf3;
-   font-size: 2.4rem;
-   margin-bottom: 10px;
+.join-team h1{
+    margin-bottom: 15px;
+    color: #a78bfa;
 }
 
-.open-position p{
-     color: #b0aeae;
-     margin-bottom: 30px;
+.join-team p{
+    color: #e4e1e1;
+    margin-bottom: 15px;
 }
 
-.open-position .open-position-btn{
-    text-decoration: none;
+.join-team button{
     padding: .5rem 1rem;
-    background-color: #a78bfa;
     border-radius: 1rem;
-    font-weight: 800;
-    color: black;
-
-}
-
-
-@media (max-width:650px) {
-
-    .team-grid{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
+    background-color: #AB90FB;
+    font-weight: 600;
 }
