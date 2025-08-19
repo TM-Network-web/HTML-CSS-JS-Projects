@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+
+}
+.container{
+    max-width: 23rem;
+    margin: 6rem auto;
+    width: 100%;
+    background-color: #222222;
+    border-radius: 6px;
+    padding: 1rem;
+}
+.container .display{
+    height: 5rem;
+    width: 100%;
+    background-color: #111111;
+    border-radius: 6px;
+    color: #5DD453;
+    padding: 0 10px;
+    font-size: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.container .grid-items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    padding: 20px 0;
+    width: 100%;
+    user-select: none;
+}
+.container .grid-items button{
+    padding: 20px 0;
+    border-radius: 6px;
+    background-color: #333333;
+    color: white;
+border: none;
+font-size: 18px;
+transition: all linear 0.2s;
+}
+.container .grid-items button:hover{
+
+    scale: 0.9;
+}
+.container .grid-items button:active{
+
+    scale: 1.1;
+}
+
+.container .grid-items .clearbtn{
+    background-color: #DD3544;
+    grid-column: span 3;
+}
+.container .grid-items .operator{
+    background-color: #FD9501;
+}
+.container .grid-items .equal{
+    background-color: #1879D4;
+    grid-column: span 2;
+}
