@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.container .left {
+    width: 70%;
+    background-color: #FEFEFE;
+}
+
+.container .left .navbar {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.container .left .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+.container .left .navbar a:hover {
+    background-color: rgb(194, 192, 189);
+}
+
+
+
+.container .left .landing {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.container .left .landing .footer {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.container .left .landing .footer div {
+    text-align: center;
+
+}
+
+.container .left .landing .textsection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+
+}
+
+.container .left .landing .textsection h1 {
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+
+.container .left .landing .textsection p {
+
+    padding-right: 14rem;
+    flex-wrap: wrap;
+}
+
+.container .left .landing .textsection .btnsection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container .left .landing .textsection .btnsection button {
+    padding: .6rem .8rem;
+    border: none;
+}
+
+.container .left .landing .textsection .btnsection .btn1 {
+    padding: .6rem 1.4rem;
+    border: none;
+    background-color: black;
+    color: white;
+
+}
+
+
+.container .right {
+    width: 30%;
+    background-color: #9BC8CE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container .right .r-header {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.container .right .r-header a {
+    text-decoration: none;
+    color: black;
+    padding: .5rem;
+}
+
+.container .right .r-landing img {
+    transform: translate(-100%, -50%);
+    height: 350px;
+    width: 350px;
+    padding-left: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.container .right .r-footer {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.container .right .r-footer button {
+    height: 100%;
+    width: 100%;
+    background-color: #5A9DA6;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width:530px) {
+
+    .container .left .landing .textsection .btnsection {
+        flex-wrap: wrap;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .right {
+        width: 100%;
+    }
+
+    .container .right .r-landing img {
+        position: relative;
+        transform: translate(-50%, 0);
+    }
+
+    .container .left {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .container .left .landing .textsection p {
+
+        padding-right: 1rem;
+    }
+
+    .container .left .landing .footer {
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+
+    .container .right {
+        margin-top: 2rem;
+    }
+
+    .container .left .landing .textsection {
+        margin-top: 2rem;
+    }
+
+
+    @media (max-width:420px) {
+        .container .right .r-landing img {
+            height: 250px;
+            width: 250px;
+        }
+
+        .container .right {
+            margin-top: 2rem;
+        }
+
+
+    }
+
+    @media (max-width:387px) {
+
+        .container .left .landing .textsection {
+            margin-top: 6rem;
+        }
+
+        @media (max-width:272px) {
+
+            .container .left .landing .textsection {
+                margin-top: 6rem;
+            }
+        }
+
+        @media (max-width:214px) {
+
+            .container .left .landing .textsection {
+                margin-top: 11rem;
+            }
+
+            .container .right {
+                margin-top: 12rem;
+            }
+
+        }
+
+    }
+}
